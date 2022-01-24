@@ -55,15 +55,14 @@ if(notValid==0){
 	if(currentObj.name==companyName){
 
 		//loop that finds if a carrier is matching
-		for (let i = 0 ; i < currentObj.carriers.length;i++){
-		   console.log(currentObj.carriers[i]);
+		for (let carrier in currentObj.carriers){
 		   // checks if the carrier is in the list, sets to true if so
-		   if(currentObj.carriers[i] == carrierName){carrier_true=carrierName;}
+		   if(currentObj.carriers[carrier] == carrierName){carrier_true=carrierName;}
 		}
 		// loop that finds if a costumer is matching
-		for (let j = 0 ; j < currentObj.carriers.length;j++){
+		for (let costumer in currentObj.costumers){
 			// checks if thee costumer is the lists, sets to true if so
-		   if(currentObj.costumers[j] == costumerName){costumer_true=costumerName;}
+		   if(currentObj.costumers[costumer] == costumerName){costumer_true=costumerName;}
 		}
 		console.log(costumer_true,carrier_true)
 
