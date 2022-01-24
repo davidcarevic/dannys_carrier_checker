@@ -1,4 +1,4 @@
-# dannys_carrier_checker
+# Danny's carrier checker
 https://davidcarevic.github.io/dannys_carrier_checker/
 
 A simple carrier checker, currently in working stages, not really filled with proper information yet. 
