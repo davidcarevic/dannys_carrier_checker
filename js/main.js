@@ -15,6 +15,7 @@ hddr.costumers=["HDP","AMZ","HOB"]
 var mtyq = new Company();
 mtyq.name="MTYQ";
 mtyq.carriers=["ESNL_DROP","XPOR_DROP","IMCL_DROP","CFRT_DROP","CFMM_DROP","IMCL","IMCL_DROP"]
+mtyq.costumers=["HDP","AMZ","HOB"]
 
 
 var msgType=0;
