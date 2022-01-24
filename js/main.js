@@ -1,4 +1,5 @@
 // company class
+// data hardcoded, not making a proper relationship model without getting paid
 class Company{
 
 	costructor(name,carriers,costumers){
