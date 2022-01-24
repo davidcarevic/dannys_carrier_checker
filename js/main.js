@@ -17,7 +17,7 @@ hddr.costumers=["HDP","AMZ","HOB"]
 var mtyq = new Company();
 mtyq.name="MTYQ";
 mtyq.carriers=["ESNL_DROP","XPOR_DROP","IMCL_DROP","CFRT_DROP","CFMM_DROP","IMCL","IMCL_DROP"]
-mtyq.costumers=["HDP","AMZ","HOB"]
+mtyq.costumers=["HDP","AMZ","HOB","HDX"]
 var msgType=0;
 
 
@@ -26,9 +26,9 @@ var msgType=0;
 function check(){
 
 	// DOM data
-	var companyName = document.getElementById("company").value.toUpperCase();
-	var carrierName = document.getElementById("carrier").value.toUpperCase();;
-	var costumerName = document.getElementById("costumer").value.toUpperCase();;
+	var companyName = document.getElementById("company").value.toUpperCase().replace(/ /g, '');
+	var carrierName = document.getElementById("carrier").value.toUpperCase().replace(/ /g, '');
+	var costumerName = document.getElementById("costumer").value.toUpperCase().replace(/ /g, '');
 
 	console.log(companyName,carrierName,costumerName);
 	console.log("class :" , hddr, mtyq);
