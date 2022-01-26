@@ -11,16 +11,58 @@ class Company{
 // instances
 var hddr = new Company();
 hddr.name="HDDR";
-hddr.carriers=["HDDR","ESNL_DROP","XPOR_DROP","IMCL_DROP","IMCP","CFMM_DROP"]
-hddr.costumers=["HDP","AMZ","HOB"]
+hddr.carriers=["HDDR","ESNL_DROP","XPOR_DROP","IMCL_DROP","IMCP","CFMM_DROP"];
+hddr.costumers=["HDP","AMZ","HOB","MRK","FMG","KRK","CRX","HXD","ADI","TJM"];
 
 var mtyq = new Company();
 mtyq.name="MTYQ";
-mtyq.carriers=["ESNL_DROP","XPOR_DROP","IMCL_DROP","CFRT_DROP","CFMM_DROP","IMCL","IMCL_DROP"]
-mtyq.costumers=["HDP","AMZ","HOB","HDX"]
+mtyq.carriers=["HDDR","CFMM_DROP","ATMI","CFRT_DROP","NEXQ","KNIG","IMCL","IMCL_DROP","ESNL_DROP","XPOR_DROP","HJBT"];
+mtyq.costumers=["HDP","AMZ","HDX"];
+
+var wglo = new Company();
+wglo.name="WGLO";
+wglo.carriers=["HDDR","CFMM_DROP","ATMI","CFRT_DROP","NEXQ","KNIG","IMCL","IMCL_DROP","ESNL_DROP","XPOR_DROP","HJBT"];
+wglo.costumers=["HDP","AMZ","HDX"];
+
+var cgot = new Company();
+cgot.name="CGOT";
+cgot.carriers=["HDDR","CFMM_DROP","ATMI","CFRT_DROP","NEXQ","KNIG","IMCL","IMCL_DROP","ESNL_DROP","XPOR_DROP","HJBT"];
+cgot.costumers=["HDP","AMZ","HDX"];
+
+var simplified = new Company();
+simplified.name="SIMPLIFIED";
+simplified.carriers=["HDDR","CFMM_DROP","ATMI","CFRT_DROP","NEXQ","KNIG","IMCL","IMCL_DROP","ESNL_DROP","XPOR_DROP","HJBT"];
+simplified.costumers=["HDP","AMZ","HDX"];
+
+var dnlp = new Company();
+dnlp.name="DNLP";
+dnlp.carriers=["HDDR","CFMM_DROP","ATMI","CFRT_DROP","NEXQ","KNIG","IMCL","IMCL_DROP","ESNL_DROP","XPOR_DROP","HJBT"]; // not sure what it's carriers are
+dnlp.costumers=["HDP","HDX"];
+
+// carrier_costumer_relation list
+cfmm_drop_list=['HDP'];
+atmi_list=['AMZ'];
+hjbt_list=['AMZ'];
+slii_list=['SPC'];
+ccxp_list=['IKA'];
+fmg_d_list=['FMG-D'];
+adame_list=['ADAME','FMG-D'];
+imcl_list=['HDP','AMZ'];
+imcl_drop_list=['HDP'];
+xpor_drop_list=['HDP'];
+esnl_drop_list=['HDP'];
+pida_list=['FMG','CSW'];
+knig_list=['AMZ'];
+nexq_list=['ANZ'];
+ceva_drop_list=['HXD'];
+mats_list=['FNG','CSW'];
+pfch_list=['HXD','KRK','HEW'];
+cfrt_drop_list=['HXD'];
+scnn_list=['CSW'];
+pcnt_list=['KRK','HXD','HEW'];
+fxxp_drop=['FMG-D'];
+
 var msgType=0;
-
-
 
 //checking function
 function check(){
@@ -44,6 +86,10 @@ function check(){
 	switch(companyName){
 	   case 'HDDR' : currentObj=hddr; break;
 	   case 'MTYQ' : currentObj=mtyq; break;
+	   case 'WGLO' : currentObj=wglo; break;
+	   case 'CGOT' : currentObj=cgot; break;
+	   case 'SIMPLIFIED' : currentObj=simplified; break;
+	   case 'DNLP' : currentObj=dnlp; break;
 	   default : notValid=1
 	}
 
