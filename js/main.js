@@ -57,10 +57,10 @@ nexq_list=['ANZ'];
 ceva_drop_list=['HXD'];
 mats_list=['FNG','CSW'];
 pfch_list=['HXD','KRK','HEW'];
-cfrt_drop_list=['HXD'];
+cfrt_drop_list=['HDX'];
 scnn_list=['CSW'];
 pcnt_list=['KRK','HXD','HEW'];
-fxxp_drop=['FMG-D'];
+fxxp_drop_list=['FMG-D'];
 
 var msgType=0;
 
@@ -81,6 +81,7 @@ function check(){
 
 	// operating object
 	var currentObj="";
+	var currentList="";
 
 	// selecting the current object
 	switch(companyName){
@@ -90,9 +91,32 @@ function check(){
 	   case 'CGOT' : currentObj=cgot; break;
 	   case 'SIMPLIFIED' : currentObj=simplified; break;
 	   case 'DNLP' : currentObj=dnlp; break;
-	   default : notValid=1
+	   default : notValid=1;
 	}
-
+	//selecting the list for the logic check
+	switch(carrierName){
+		case 'CFMM_DROP': currentList=cfmm_drop_list; break;
+		case 'HJBT' : currentList=hjbt_list; break;
+		case 'SLII' : currentList=slii_list; break;
+		case 'CCXP' : currentList=ccxp_list; break;
+		case 'FMG-D': currentList=fmg_d_list; break;
+		case 'ADAME' : currentList=adame_list; break;
+		case 'IMCL' : currentList=imcl_list; break;
+		case 'IMCL_DROP' : currentList=imcl_drop_list; break;
+		case 'XPOR_DROP' : currentList=xpor_drop_list; break;
+		case 'ESNL_DROP' : currentList=esnl_drop_list; break;
+		case 'PIDA' : currentList=pida_list; break;
+		case 'KNIG' : currentList=knig_list; break;
+		case 'NEXQ' : currentList=nexq_list; break;
+		case 'CEVA_DROP' : currentList=ceva_drop_list; break;
+		case 'MATS' : currentList=mats_list; break;
+		case 'PFCH' : currentList=pfch_list; break;
+		case 'CFRT_DROP' : currentList=cfrt_drop_list; break;
+		case 'SCNN' : currentList=scnn_list; break;
+		case 'PCNT' : currentList=pcnt_list; break;
+		case 'FXXP_DROP' : currentList=fxxp_drop_list; break;
+		default : notValid=1;
+	}
 	console.log(currentObj);
 
 	// if it's a valid comapny
@@ -122,6 +146,14 @@ if(notValid==0){
 			msgType=0;
 			costumer_true=0;
 			carrier_true=0;
+		}
+	}
+	if(currentList){
+		//checking list of a carrier if they have those costumers
+		for(let costumer in currentList){
+			//console.log('costumer in current list ', currentList[costumer])
+			if(currentList[costumer]==costumerName){msgType=1;}
+			else{msgType=0;}
 		}
 	}
 }
