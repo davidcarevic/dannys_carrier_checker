@@ -64,6 +64,7 @@ pcnt_list=['KRK','HXD','HEW'];
 fxxp_drop_list=['FMG-D'];
 
 var msgType=0;
+var carrierTrue=0;
 
 //checking function
 function check(){
@@ -155,7 +156,7 @@ if(notValid==0){
 		for(let costumer in currentList){
 			//console.log('costumer in current list ', currentList[costumer])
 			//console.log('current costumer : ',costumerName);
-			if(currentList[costumer]==costumerName){msgType=1;break;}
+			if(currentList[costumer]==costumerName){carrierTrue=1;break;}
 		}
 	}
 }
@@ -185,15 +186,17 @@ if(notValid==0){
 						$('#form-message-success').hide();
 						
 
-						if(msgType==0){
+						if(msgType==0 || carrierTrue==0){
 							$('#form-message-warning').html("REJECT! This company cannot take this container.");
 				            $('#form-message-warning').fadeIn();
+							
 	
 						}
 						else{
 						    $('#form-message-success').fadeIn();   
 
 							//resets the value
+							carrierTrue=0;
 							msgType=0;
 							
 						}		
