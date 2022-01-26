@@ -156,7 +156,6 @@ if(notValid==0){
 			//console.log('costumer in current list ', currentList[costumer])
 			//console.log('current costumer : ',costumerName);
 			if(currentList[costumer]==costumerName){msgType=1;break;}
-			else{msgType=0;}
 		}
 	}
 }
