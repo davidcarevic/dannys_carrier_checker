@@ -40,6 +40,7 @@ dnlp.carriers=["HDDR","CFMM_DROP","ATMI","CFRT_DROP","NEXQ","KNIG","IMCL","IMCL_
 dnlp.costumers=["HDP","HDX"];
 
 // carrier_costumer_relation list
+hddr_list=["HDP","AMZ","HOB","MRK","FMG","KRK","CRX","HXD","ADI","TJM"];
 cfmm_drop_list=['HDP'];
 atmi_list=['AMZ'];
 hjbt_list=['AMZ'];
@@ -95,6 +96,7 @@ function check(){
 	}
 	//selecting the list for the logic check
 	switch(carrierName){
+		case 'HDDR' : currentList=hddr_list; break;
 		case 'CFMM_DROP': currentList=cfmm_drop_list; break;
 		case 'HJBT' : currentList=hjbt_list; break;
 		case 'SLII' : currentList=slii_list; break;
@@ -151,8 +153,9 @@ if(notValid==0){
 	if(currentList){
 		//checking list of a carrier if they have those costumers
 		for(let costumer in currentList){
-			//console.log('costumer in current list ', currentList[costumer])
-			if(currentList[costumer]==costumerName){msgType=1;}
+			console.log('costumer in current list ', currentList[costumer])
+			console.log('current costumer : ',costumerName);
+			if(currentList[costumer]==costumerName){msgType=1;break;}
 			else{msgType=0;}
 		}
 	}
