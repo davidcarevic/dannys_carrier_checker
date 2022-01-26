@@ -39,7 +39,7 @@ dnlp.name="DNLP";
 dnlp.carriers=["HDDR","CFMM_DROP","ATMI","CFRT_DROP","NEXQ","KNIG","IMCL","IMCL_DROP","ESNL_DROP","XPOR_DROP","HJBT"]; // not sure what it's carriers are
 dnlp.costumers=["HDP","HDX"];
 
-// carrier_costumer_relation list
+// carrier_costumer_relation list - would be better to just make these into separate objects and select from them inasted of writing lists twice, however the company lists are GLOBAL for all their costumers
 hddr_list=["HDP","AMZ","HOB","MRK","FMG","KRK","CRX","HXD","ADI","TJM"];
 cfmm_drop_list=['HDP'];
 atmi_list=['AMZ'];
@@ -153,8 +153,8 @@ if(notValid==0){
 	if(currentList){
 		//checking list of a carrier if they have those costumers
 		for(let costumer in currentList){
-			console.log('costumer in current list ', currentList[costumer])
-			console.log('current costumer : ',costumerName);
+			//console.log('costumer in current list ', currentList[costumer])
+			//console.log('current costumer : ',costumerName);
 			if(currentList[costumer]==costumerName){msgType=1;break;}
 			else{msgType=0;}
 		}
