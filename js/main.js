@@ -49,6 +49,8 @@ imcl.name="IMCL";
 imcl.carriers=["HDDR","ESNL_DROP","IMCL","IMCL_DROP"];
 imcl.costumers=['HDP',"AMZ"];
 
+// pcnt - mats
+
 // carrier_costumer_relation list - would be better to just make these into separate objects and select from them inasted of writing lists twice, however the company lists are GLOBAL for all their costumers
 hddr_list=["HDP","AMZ","HOB","MRK","FMG","KRK","CRX","HXD","ADI","TJM","BBI"];
 cfmm_drop_list=['HDP'];
