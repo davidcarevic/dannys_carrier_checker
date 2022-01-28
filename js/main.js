@@ -12,7 +12,7 @@ class Company{
 var hddr = new Company();
 hddr.name="HDDR";
 hddr.carriers=["HDDR","ESNL_DROP","XPOR_DROP","IMCL_DROP","IMCL","CFMM_DROP"];
-hddr.costumers=["HDP","AMZ","HOB","MRK","FMG","KRK","CRX","HXD","ADI","TJM"];
+hddr.costumers=["HDP","AMZ","HOB","MRK","FMG","KRK","CRX","HXD","ADI","TJM","BBI"];
 
 var mtyq = new Company();
 mtyq.name="MTYQ";
@@ -39,8 +39,18 @@ dnlp.name="DNLP";
 dnlp.carriers=["HDDR","CFMM_DROP","ATMI","CFRT_DROP","NEXQ","KNIG","IMCL","IMCL_DROP","ESNL_DROP","XPOR_DROP","HJBT"]; // not sure what it's carriers are
 dnlp.costumers=["HDP","HDX"];
 
+var esnl_drop = new Company();
+esnl_drop.name="ESNL_DROP";
+esnl_drop.carriers=["HDDR","ESNL_DROP","IMCL","IMCL_DROP"];
+esnl_drop.costumers=['HDP'];
+
+var imcl = new Company();
+imcl.name="IMCL";
+imcl.carriers=["HDDR","ESNL_DROP","IMCL","IMCL_DROP"];
+imcl.costumers=['HDP',"AMZ"];
+
 // carrier_costumer_relation list - would be better to just make these into separate objects and select from them inasted of writing lists twice, however the company lists are GLOBAL for all their costumers
-hddr_list=["HDP","AMZ","HOB","MRK","FMG","KRK","CRX","HXD","ADI","TJM"];
+hddr_list=["HDP","AMZ","HOB","MRK","FMG","KRK","CRX","HXD","ADI","TJM","BBI"];
 cfmm_drop_list=['HDP'];
 atmi_list=['AMZ'];
 hjbt_list=['AMZ'];
@@ -93,6 +103,8 @@ function check(){
 	   case 'CGOT' : currentObj=cgot; break;
 	   case 'SIMPLIFIED' : currentObj=simplified; break;
 	   case 'DNLP' : currentObj=dnlp; break;
+	   case 'ESNL_DROP' : currentObj=esnl_drop; break;
+	   case 'IMCL' : currentObj=imcl; break;
 	   default : notValid=1;
 	}
 	//selecting the list for the logic check
