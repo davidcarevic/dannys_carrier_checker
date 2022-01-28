@@ -11,7 +11,7 @@ class Company{
 // instances
 var hddr = new Company();
 hddr.name="HDDR";
-hddr.carriers=["HDDR","ESNL_DROP","XPOR_DROP","IMCL_DROP","IMCP","CFMM_DROP"];
+hddr.carriers=["HDDR","ESNL_DROP","XPOR_DROP","IMCL_DROP","IMCL","CFMM_DROP"];
 hddr.costumers=["HDP","AMZ","HOB","MRK","FMG","KRK","CRX","HXD","ADI","TJM"];
 
 var mtyq = new Company();
