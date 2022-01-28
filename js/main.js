@@ -1,5 +1,5 @@
 // company class
-// data hardcoded, not making a proper relationship model without getting paid
+// data hardcoded, not making a proper relationship model without getting paid, don't want to pay for a hosting server for backend
 class Company{
 
 	costructor(name,carriers,costumers){
