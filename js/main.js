@@ -1,5 +1,6 @@
 // company class
 // data hardcoded, not making a proper relationship model without getting paid, don't want to pay for a hosting server for backend
+// without any backend calls it executes faster, not a lot of data so there's no need for a db
 class Company{
 
 	costructor(name,carriers,costumers){
