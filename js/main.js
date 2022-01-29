@@ -133,7 +133,7 @@ function check(){
 		case 'SCNN' : currentList=scnn_list; break;
 		case 'PCNT' : currentList=pcnt_list; break;
 		case 'FXXP_DROP' : currentList=fxxp_drop_list; break;
-                case 'ATMI' : currentList=atmi_list; break;
+        case 'ATMI' : currentList=atmi_list; break;
 		default : notValid=1;
 	}
 	console.log(currentObj);
