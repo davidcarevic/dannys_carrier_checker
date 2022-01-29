@@ -209,7 +209,7 @@ if(notValid==0){
 						}
 						else{
 						    $('#form-message-success').fadeIn();   
-
+							
 							//resets the value
 							carrierTrue=0;
 							msgType=0;
