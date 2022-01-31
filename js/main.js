@@ -50,7 +50,10 @@ imcl.name="IMCL";
 imcl.carriers=["HDDR","ESNL_DROP","IMCL","IMCL_DROP"];
 imcl.costumers=['HDP',"AMZ"];
 
-// pcnt - mats
+var pida = new Company();
+pida.name="PIDA";
+pida.carriers=["PIDA","MATS"];
+pida.costumers=["FMG","CSW"];
 
 // carrier_costumer_relation list - would be better to just make these into separate objects and select from them inasted of writing lists twice, however the company lists are GLOBAL for all their costumers
 hddr_list=["HDP","AMZ","HOB","MRK","FMG","KRK","CRX","HXD","ADI","TJM","BBI"];
@@ -69,7 +72,7 @@ pida_list=['FMG','CSW'];
 knig_list=['AMZ'];
 nexq_list=['ANZ'];
 ceva_drop_list=['HXD'];
-mats_list=['FNG','CSW'];
+mats_list=['FMG','CSW'];
 pfch_list=['HXD','KRK','HEW'];
 cfrt_drop_list=['HDX'];
 scnn_list=['CSW'];
@@ -108,6 +111,7 @@ function check(){
 	   case 'DNLP' : currentObj=dnlp; break;
 	   case 'ESNL_DROP' : currentObj=esnl_drop; break;
 	   case 'IMCL' : currentObj=imcl; break;
+	   case 'PIDA' : currentObj=pida; break;
 	   default : notValid=1;
 	}
 	//selecting the list for the logic check
@@ -170,8 +174,8 @@ if(notValid==0){
 	if(currentList){
 		//checking list of a carrier if they have those costumers
 		for(let costumer in currentList){
-			//console.log('costumer in current list ', currentList[costumer])
-			//console.log('current costumer : ',costumerName);
+			console.log('costumer in current list ', currentList[costumer])
+			console.log('current costumer : ',costumerName);
 			if(currentList[costumer]==costumerName){carrierTrue=1;break;}
 		}
 	}
@@ -198,24 +202,23 @@ if(notValid==0){
 				},
 				
 				submitHandler: function() {		
+
+					    console.log(" OVO OVDE ", carrierTrue,msgType);
 						$('#form-message-warning').hide();
 						$('#form-message-success').hide();
 						
-
 						if(msgType==0 || carrierTrue==0){
 							$('#form-message-warning').html("REJECT! This company cannot take this container.");
 				            $('#form-message-warning').fadeIn();
-							
-	
 						}
 						else{
-						    $('#form-message-success').fadeIn();   
-							
-							//resets the value
-							carrierTrue=0;
-							msgType=0;
+						    $('#form-message-success').fadeIn();   					
 							
 						}		
+
+						//resets the value
+						carrierTrue=0;
+						msgType=0;
 		  		} 
 			});	
 		}
