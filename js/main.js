@@ -176,9 +176,12 @@ fxxp_drop_list=['FMG-D'];
 
 var msgType=0;
 var carrierTrue=0;
+var errorMsg=[];
 
 //checking function
 function check(){
+
+	
 
 	// DOM data
 	var companyName = document.getElementById("company").value.toUpperCase().replace(/ /g, '');
@@ -278,6 +281,8 @@ if(notValid==0){
 			msgType=1;
 		}
 		else{
+			if(carrier_true==0){errorMsg.push("<div>"+companyName+" doesn't take "+carrierName+" containers.</div>")}
+			if(costumer_true==0){errorMsg.push("<div>"+companyName+" doesn't have "+costumerName+" as a costumer.</div>")}
 			// resets the values for a new input if a match is not found
 			msgType=0;
 			costumer_true=0;
@@ -291,8 +296,10 @@ if(notValid==0){
 			console.log('current costumer : ',costumerName);
 			if(currentList[costumer]==costumerName){carrierTrue=1;break;}
 		}
+		if(carrierTrue==0){errorMsg.push("<div>"+carrierName+" doesn't have "+costumerName+" as a costumer.</div>");}
 	}
 }
+else{errorMsg="Invalid inputs."}
 }
 
 (function($) {
@@ -314,14 +321,12 @@ if(notValid==0){
 					costumer: "Please enter a costumer"
 				},
 				
-				submitHandler: function() {		
-
+				submitHandler: function() {	
 					    console.log(" OVO OVDE ", carrierTrue,msgType);
 						$('#form-message-warning').hide();
 						$('#form-message-success').hide();
-						
 						if(msgType==0 || carrierTrue==0){
-							$('#form-message-warning').html("REJECT! This company cannot take this container.");
+							$('#form-message-warning').html(errorMsg);
 				            $('#form-message-warning').fadeIn();
 						}
 						else{
@@ -330,6 +335,7 @@ if(notValid==0){
 						}		
 
 						//resets the value
+						errorMsg=[];
 						carrierTrue=0;
 						msgType=0;
 		  		} 
