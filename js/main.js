@@ -309,7 +309,7 @@ else{
 	errorMsg.push("Invalid inputs.");
 	//tijana
 	if(companyName=="TIJANA" && carrierName=="TIJANA" && costumerName=="TIJANA"){
-		errorMsg.push("<div><iframe width='500' height='315' src='https://www.youtube.com/embed/F93SBfM0WDk' allowfullscreen ng-show='showvideo'></iframe></div>");
+		errorMsg.push("<div><iframe width='450' height='315' src='https://www.youtube.com/embed/F93SBfM0WDk' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>");
 	}   
 }
 }
