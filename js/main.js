@@ -332,7 +332,6 @@ else{
 					carrier: "Please enter a valid carrier",
 					costumer: "Please enter a costumer"
 				},
-				
 				submitHandler: function() {	
 					    console.log(" OVO OVDE ", carrierTrue,msgType);
 						$('#form-message-warning').hide();
@@ -342,10 +341,8 @@ else{
 				            $('#form-message-warning').fadeIn();
 						}
 						else{
-						    $('#form-message-success').fadeIn();   					
-							
+						    $('#form-message-success').fadeIn();   						
 						}		
-
 						//resets the value
 						errorMsg=[];
 						carrierTrue=0;
