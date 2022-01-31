@@ -55,6 +55,100 @@ pida.name="PIDA";
 pida.carriers=["PIDA","MATS"];
 pida.costumers=["FMG","CSW"];
 
+var cfmm_drop = new Company();
+cfmm_drop.name="CFMM_DROP";
+cfmm_drop.carriers=["CFMM_DROP"];
+cfmm_drop.costumers=["HDP"];
+
+var hjbt = new Company();
+hjbt.name="HJBT";
+hjbt.carriers=["HJBT"];
+hjbt.costumers=["AMZ"];
+
+var slii = new Company();
+slii.name="SLII";
+slii.carriers=["SLII"];
+slii.costumers=["SPC"];
+
+var fmg_d = new Company();
+fmg_d.name="FMG-D";
+fmg_d.carriers=['ADAME','FMG-D'];
+fmg_d.costumers=['FMG-D'];
+
+var adame = new Company();
+adame.name="ADAME";
+adame.carriers=['ADAME','FMG-D'];
+adame.costumers=['FMG-D'];
+
+var imcl_drop = new Company();
+imcl_drop.name="IMCL_DROP";
+imcl_drop.carriers=["IMCL_DROP","IMCL","ESNL_DROP"];
+imcl_drop.costumers=["HDP"];
+
+var xpor_drop = new Company();
+xpor_drop.name="XPOR_DROP";
+xpor_drop.carriers=["XPOR_DROP"];
+xpor_drop.costumers=["HDP"];
+
+var knig = new Company();
+knig.name="KNIG";
+knig.carriers=["KNIG"];
+knig.costumers=["AMZ"];
+
+var nexq = new Company();
+nexq.name="NEXQ";
+nexq.carriers=["NEXQ"];
+nexq.costumers=["AMZ"];
+
+ceva_drop = new Company();
+ceva_drop.name="CEVA_DROP";
+ceva_drop.carriers=["CEVA","CEVA_DROP"];
+ceva_drop.costumers=["HXD"];
+
+ceva = new Company();
+ceva.name="CEVA";
+ceva.carriers=["CEVA","CEVA_DROP"];
+ceva.costumers=["HXD"];
+
+mats = new Company();
+mats.name="MATS";
+mats.carriers=["PIDA","MATS"];
+mats.costumers=["FMG,CSW"];
+
+pfch = new Company();
+pfch.name="PFCH";
+pfch.carriers=["PFCH","PCNT"];
+pfch.costumers=["HXD","KRK","HEW"];
+
+cfrt_drop = new Company();
+cfrt_drop.name="CFRT_DROP";
+cfrt_drop.carriers=["CFRT_DROP"];
+cfrt_drop.costumers=["HDX"];
+
+scnn = new Company();
+scnn.name="SCNN";
+scnn.carriers=["SCNN"];
+scnn.costumers=["CSW"];
+
+pcnt = new Company();
+pcnt.name="PCNT";
+pcnt.carriers=["PCNT","PFCH"];
+
+atmi = new Company();
+atmi.name="ATMI";
+atmi.carriers=["ATMI"];
+atmi.costumers=["AMZ"];
+
+ccxp = new Company();
+ccxp.name="CCXP";
+ccxp.carriers=["CCXP"];
+ccxp.costumers=["IKA"];
+
+fxxp_drop = new Company();
+fxxp_drop.name="FXXP_DROP";
+fxxp_drop.carriers=["FXXP_DROP","FMG-D"];
+fxxp_drop.costumers=["FMG-D"];
+
 // carrier_costumer_relation list - would be better to just make these into separate objects and select from them inasted of writing lists twice, however the company lists are GLOBAL for all their costumers
 hddr_list=["HDP","AMZ","HOB","MRK","FMG","KRK","CRX","HXD","ADI","TJM","BBI"];
 cfmm_drop_list=['HDP'];
@@ -72,6 +166,7 @@ pida_list=['FMG','CSW'];
 knig_list=['AMZ'];
 nexq_list=['ANZ'];
 ceva_drop_list=['HXD'];
+ceva_list=['HXD'];
 mats_list=['FMG','CSW'];
 pfch_list=['HXD','KRK','HEW'];
 cfrt_drop_list=['HDX'];
@@ -112,6 +207,23 @@ function check(){
 	   case 'ESNL_DROP' : currentObj=esnl_drop; break;
 	   case 'IMCL' : currentObj=imcl; break;
 	   case 'PIDA' : currentObj=pida; break;
+	   case 'CFMM_DROP' : currentObj=cfmm_drop; break;
+	   case 'HJBT' : currentObj=hjbt; break;
+	   case 'FMG-D' : currentObj=fmg_d; break;
+	   case 'ADAME' : currentObj=adame; break;
+	   case 'IMCL_DROP' : currentObj=imcl_drop; break;
+	   case 'XPOR_DROP' : currentObj=xpor_drop; break;
+	   case 'KNIG' : currentObj=knig; break;
+	   case 'CEVA_DROP' : currentObj=ceva_drop; break;
+	   case 'CEVA' : currentObj=ceva; break;
+	   case 'MATS' : currentObj=mats; break;
+	   case 'PFCH' : currentObj=pfch; break;
+	   case 'CFRT_DROP' : currentObj=cfrt_drop; break;
+	   case 'SCNN' : currentObj=scnn; break;
+	   case 'PCNT' : currentObj=pcnt; break;
+	   case 'ATMI' : currentObj=atmi; break;
+	   case 'CCXP' : currentObj=ccxp; break;
+	   case 'FXXP_DROP': currentObj=fxxp_drop; break;
 	   default : notValid=1;
 	}
 	//selecting the list for the logic check
@@ -131,6 +243,7 @@ function check(){
 		case 'KNIG' : currentList=knig_list; break;
 		case 'NEXQ' : currentList=nexq_list; break;
 		case 'CEVA_DROP' : currentList=ceva_drop_list; break;
+		case 'CEVA' : currentList=ceva_list; break;
 		case 'MATS' : currentList=mats_list; break;
 		case 'PFCH' : currentList=pfch_list; break;
 		case 'CFRT_DROP' : currentList=cfrt_drop_list; break;
