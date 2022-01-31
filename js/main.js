@@ -283,6 +283,12 @@ if(notValid==0){
 		else{
 			if(carrier_true==0){errorMsg.push("<div>"+companyName+" doesn't take "+carrierName+" containers.</div>")}
 			if(costumer_true==0){errorMsg.push("<div>"+companyName+" doesn't have "+costumerName+" as a costumer.</div>")}
+
+			//dzeki
+			if(companyName=="ESNL_DROP" && carrierName=="CFRT_DROP" && costumerName=="HDX"){
+				errorMsg.push("<div><img src='images/dzeki.gif' width=50% heigh=50%/></div> Ako je Stivi Danijels u pitanju Dzeki kaze da je to siva zona, MA GUD TU GO!")
+			}
+			
 			// resets the values for a new input if a match is not found
 			msgType=0;
 			costumer_true=0;
@@ -299,7 +305,8 @@ if(notValid==0){
 		if(carrierTrue==0){errorMsg.push("<div>"+carrierName+" doesn't have "+costumerName+" as a costumer.</div>");}
 	}
 }
-else{errorMsg="Invalid inputs."}
+else{errorMsg="Invalid inputs."
+}
 }
 
 (function($) {
