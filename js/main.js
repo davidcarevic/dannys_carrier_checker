@@ -305,7 +305,12 @@ if(notValid==0){
 		if(carrierTrue==0){errorMsg.push("<div>"+carrierName+" doesn't have "+costumerName+" as a costumer.</div>");}
 	}
 }
-else{errorMsg="Invalid inputs."
+else{
+	errorMsg.push("Invalid inputs.");
+	//tijana
+	if(companyName=="TIJANA" && carrierName=="TIJANA" && costumerName=="TIJANA"){
+		errorMsg.push("<div><iframe width='500' height='315' src='https://www.youtube.com/embed/F93SBfM0WDk' allowfullscreen ng-show='showvideo'></iframe></div>");
+	}   
 }
 }
 
